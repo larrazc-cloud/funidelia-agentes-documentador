@@ -10,7 +10,7 @@
 ## Funciones
 
 
-### `main(ruta_proyecto, output, formato, incluir_git, force, verbose)`
+### `main(ruta_proyecto, output, formato, incluir_git, force, deshacer, verbose)`
 
 Genera documentacion automatica para el proyecto en RUTA_PROYECTO.
 
