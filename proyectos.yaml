@@ -1,0 +1,4 @@
+proyectos:
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/agente-documentador
+  output: docs
+  git: true

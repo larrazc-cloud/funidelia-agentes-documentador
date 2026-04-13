@@ -7,32 +7,85 @@ Explora un proyecto, analiza su estructura y genera documentacion automatica.
 import click
 from rich.console import Console
 from rich.panel import Panel
+from rich.table import Table
 
 from core.explorador import Explorador
 from core.orquestador import Orquestador
 from core.git_manager import GitManager
 from core.changelog import Changelog
+from core import registro
 
 console = Console()
 
 
 @click.command()
-@click.argument("ruta_proyecto", type=click.Path(exists=True))
+@click.argument("ruta_proyecto", type=click.Path(exists=True), required=False)
 @click.option("--output", "-o", default="docs", help="Carpeta de salida para la documentacion.")
 @click.option("--formato", "-f", type=click.Choice(["markdown", "html"]), default="markdown", help="Formato de salida.")
 @click.option("--incluir-git", is_flag=True, default=False, help="Incluir historial git en la documentacion.")
 @click.option("--force", is_flag=True, default=False, help="Sobrescribir sin pedir confirmacion (respeta secciones PROTEGIDO).")
 @click.option("--deshacer", is_flag=True, default=False, help="Revierte la ultima ejecucion usando CAMBIOS.md.")
+@click.option("--registrar", is_flag=True, default=False, help="Registra el proyecto para auto-documentacion.")
+@click.option("--desregistrar", is_flag=True, default=False, help="Elimina el proyecto del registro.")
+@click.option("--listar", is_flag=True, default=False, help="Muestra los proyectos registrados.")
 @click.option("--verbose", "-v", is_flag=True, default=False, help="Mostrar informacion detallada.")
-def main(ruta_proyecto, output, formato, incluir_git, force, deshacer, verbose):
+def main(ruta_proyecto, output, formato, incluir_git, force, deshacer,
+         registrar, desregistrar, listar, verbose):
     """Genera documentacion automatica para el proyecto en RUTA_PROYECTO."""
 
-    # Modo deshacer: revertir y salir
+    # --- Modo listar ---
+    if listar:
+        proyectos = registro.listar()
+        if not proyectos:
+            console.print("[dim]No hay proyectos registrados.[/dim]")
+            return
+        tabla = Table(title="Proyectos registrados")
+        tabla.add_column("Proyecto", style="bold")
+        tabla.add_column("Ruta")
+        tabla.add_column("Output")
+        tabla.add_column("Git")
+        for p in proyectos:
+            from pathlib import Path
+            nombre = Path(p["ruta"]).name
+            tabla.add_row(nombre, p["ruta"], p.get("output", "docs"), str(p.get("git", True)))
+        console.print(tabla)
+        return
+
+    # --- Modo registrar ---
+    if registrar:
+        if not ruta_proyecto:
+            console.print("[red]Debes indicar la ruta del proyecto.[/red]")
+            return
+        if registro.registrar(ruta_proyecto, output=output, git=incluir_git):
+            from pathlib import Path
+            console.print(f"[green]Registrado:[/green] {Path(ruta_proyecto).resolve()}")
+        else:
+            console.print("[yellow]Ya estaba registrado.[/yellow]")
+        return
+
+    # --- Modo desregistrar ---
+    if desregistrar:
+        if not ruta_proyecto:
+            console.print("[red]Debes indicar la ruta del proyecto.[/red]")
+            return
+        if registro.desregistrar(ruta_proyecto):
+            console.print(f"[green]Desregistrado.[/green]")
+        else:
+            console.print("[yellow]No estaba registrado.[/yellow]")
+        return
+
+    # --- De aqui en adelante se necesita ruta_proyecto ---
+    if not ruta_proyecto:
+        console.print("[red]Debes indicar la ruta del proyecto.[/red]")
+        console.print("Uso: documentar.py [OPCIONES] RUTA_PROYECTO")
+        return
+
+    # --- Modo deshacer ---
     if deshacer:
         from pathlib import Path
         output_dir = Path(ruta_proyecto).resolve() / output
         console.print(Panel.fit(
-            "[bold red]Agente Documentador — Deshacer[/bold red]\n"
+            "[bold red]Agente Documentador �� Deshacer[/bold red]\n"
             "Revirtiendo ultima ejecucion",
             border_style="red",
         ))
@@ -44,16 +97,17 @@ def main(ruta_proyecto, output, formato, incluir_git, force, deshacer, verbose):
         if resultado["restaurados"]:
             console.print(f"\n  [green]Restaurados ({len(resultado['restaurados'])}):[/green]")
             for f in resultado["restaurados"]:
-                console.print(f"    ← {f}")
+                console.print(f"    <- {f}")
         if resultado["eliminados"]:
             console.print(f"\n  [yellow]Eliminados ({len(resultado['eliminados'])}):[/yellow]")
             for f in resultado["eliminados"]:
-                console.print(f"    ✕ {f}")
+                console.print(f"    x {f}")
         if resultado["sin_cambio"]:
             console.print(f"\n  [dim]Sin cambio: {len(resultado['sin_cambio'])} ficheros[/dim]")
         console.print("\n[bold green]Reversion completada.[/bold green]")
         return
 
+    # --- Modo normal: documentar ---
     console.print(Panel.fit(
         "[bold blue]Agente Documentador[/bold blue]\n"
         "Generador automatico de documentacion",

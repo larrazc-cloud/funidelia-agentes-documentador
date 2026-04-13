@@ -4,11 +4,8 @@
 
 ## Estructura del proyecto
 
-- **Archivos:** 17
+- **Archivos:** 21
 - **Directorios:** 3
-
-- **Commits:** 1
-- **Rama activa:** `main`
 
 
 ## Arbol de directorios
@@ -20,6 +17,13 @@ agente-documentador/
 ├── templates/
 
 ```
+
+
+## Configuracion
+
+| Archivo | Tamano |
+|---------|--------|
+| `proyectos.yaml` | 108 bytes |
 
 
 
@@ -41,6 +45,14 @@ agente-documentador/
 
 
 - **Funciones:** `main`
+
+
+### core/registro.py
+
+> Registro de proyectos para auto-documentacion.
+
+
+- **Funciones:** `listar`, `registrar`, `desregistrar`
 
 
 ### core/__init__.py
@@ -83,22 +95,6 @@ agente-documentador/
 
 
 
-
-
-## Git
-
-**Ultimo commit:** Agente Documentador v0.1.0 (Carlos, 2026-04-13T11:57:21+02:00)
-
-### Contribuidores
-
-| Autor | Commits |
-|-------|---------|
-| Carlos | 1 |
-
-
-### Ramas
-
-- `main`
 
 
 
