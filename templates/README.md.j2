@@ -1,0 +1,65 @@
+# {{ nombre }}
+
+> Documentacion generada automaticamente por el Agente Documentador.
+
+## Estructura del proyecto
+
+- **Archivos:** {{ archivos | length }}
+- **Directorios:** {{ directorios | length }}
+{% if git %}
+- **Commits:** {{ git.total_commits }}
+- **Rama activa:** `{{ git.rama_activa }}`
+{% endif %}
+
+## Arbol de directorios
+
+```
+{{ nombre }}/
+{% for dir in directorios %}├── {{ dir }}/
+{% endfor %}
+```
+
+{% if por_tipo.get('configuracion') %}
+## Configuracion
+
+| Archivo | Tamano |
+|---------|--------|
+{% for f in por_tipo['configuracion'] %}| `{{ f.ruta }}` | {{ f.tamano }} bytes |
+{% endfor %}
+{% endif %}
+
+{% if modulos %}
+## Modulos
+
+{% for mod in modulos %}
+### {{ mod.ruta }}
+
+{% if mod.simbolos.docstring %}> {{ mod.simbolos.docstring }}{% endif %}
+
+{% if mod.simbolos.clases %}- **Clases:** {% for c in mod.simbolos.clases %}`{{ c.nombre }}`{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}
+{% if mod.simbolos.funciones %}- **Funciones:** {% for f in mod.simbolos.funciones %}`{{ f.nombre }}`{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if git %}
+## Git
+
+**Ultimo commit:** {{ git.ultimo_commit.mensaje }} ({{ git.ultimo_commit.autor }}, {{ git.ultimo_commit.fecha }})
+
+### Contribuidores
+
+| Autor | Commits |
+|-------|---------|
+{% for autor, n in git.contribuidores.items() %}| {{ autor }} | {{ n }} |
+{% endfor %}
+
+### Ramas
+
+{% for rama in git.ramas %}- `{{ rama }}`
+{% endfor %}
+{% endif %}
+
+---
+*Generado con Agente Documentador v0.1.0*

@@ -1,0 +1,37 @@
+# {{ nombre }}
+
+**Ruta:** `{{ ruta }}`
+
+{% if simbolos.docstring %}> {{ simbolos.docstring }}{% endif %}
+
+{% if simbolos.clases %}
+## Clases
+
+{% for clase in simbolos.clases %}
+### `{{ clase.nombre }}`
+
+{% if clase.docstring %}{{ clase.docstring }}{% endif %}
+
+{% if clase.metodos %}
+**Metodos publicos:**
+
+{% for metodo in clase.metodos %}- `{{ metodo }}()`
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% if simbolos.funciones %}
+## Funciones
+
+{% for fn in simbolos.funciones %}
+### `{{ fn.nombre }}({{ fn.args | join(', ') }})`
+
+{% if fn.docstring %}{{ fn.docstring }}{% endif %}
+
+{% endfor %}
+{% endif %}
+
+---
+*Generado con Agente Documentador v0.1.0*
