@@ -7,7 +7,7 @@
 - **Archivos:** 23
 - **Directorios:** 3
 
-- **Commits:** 4
+- **Commits:** 5
 - **Rama activa:** `main`
 
 
@@ -26,7 +26,7 @@ agente-documentador/
 
 | Archivo | Tamano |
 |---------|--------|
-| `proyectos.yaml` | 228 bytes |
+| `proyectos.yaml` | 333 bytes |
 
 
 
@@ -102,13 +102,13 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** feat: registro centralizado de proyectos + cron multi-proyecto (Carlos, 2026-04-13T12:09:41+02:00)
+**Ultimo commit:** docs: auto-documentacion horaria (Carlos, 2026-04-13T12:37:01+02:00)
 
 ### Contribuidores
 
 | Autor | Commits |
 |-------|---------|
-| Carlos | 4 |
+| Carlos | 5 |
 
 
 ### Ramas
