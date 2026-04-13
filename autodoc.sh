@@ -47,7 +47,7 @@ grep '^\- ruta:\|^  ruta:' "$REGISTRO" | sed 's/.*ruta: *//' | while read -r RUT
         OUTPUT="$OUT_LINE"
     fi
 
-    $VENV "$DIR/documentar.py" --force $INCLUIR_GIT -o "$OUTPUT" "$RUTA"
+    "$VENV" "$DIR/documentar.py" --force $INCLUIR_GIT -o "$OUTPUT" "$RUTA"
 
     # Commitear y subir si docs/ cambio
     cd "$RUTA"

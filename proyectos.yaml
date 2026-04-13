@@ -1,4 +1,10 @@
 proyectos:
-- ruta: /Users/carlos/Desktop/Proyectos de Claude/agente-documentador
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador
+  output: docs
+  git: true
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Reviews amazon
+  output: docs
+  git: true
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-ux
   output: docs
   git: true
