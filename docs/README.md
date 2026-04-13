@@ -4,8 +4,11 @@
 
 ## Estructura del proyecto
 
-- **Archivos:** 21
+- **Archivos:** 23
 - **Directorios:** 3
+
+- **Commits:** 4
+- **Rama activa:** `main`
 
 
 ## Arbol de directorios
@@ -23,7 +26,7 @@ agente-documentador/
 
 | Archivo | Tamano |
 |---------|--------|
-| `proyectos.yaml` | 108 bytes |
+| `proyectos.yaml` | 228 bytes |
 
 
 
@@ -95,6 +98,22 @@ agente-documentador/
 
 
 
+
+
+## Git
+
+**Ultimo commit:** feat: registro centralizado de proyectos + cron multi-proyecto (Carlos, 2026-04-13T12:09:41+02:00)
+
+### Contribuidores
+
+| Autor | Commits |
+|-------|---------|
+| Carlos | 4 |
+
+
+### Ramas
+
+- `main`
 
 
 
