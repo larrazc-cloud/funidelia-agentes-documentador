@@ -4,10 +4,10 @@
 
 ## Estructura del proyecto
 
-- **Archivos:** 23
+- **Archivos:** 22
 - **Directorios:** 3
 
-- **Commits:** 5
+- **Commits:** 8
 - **Rama activa:** `main`
 
 
@@ -26,7 +26,7 @@ agente-documentador/
 
 | Archivo | Tamano |
 |---------|--------|
-| `proyectos.yaml` | 333 bytes |
+| `proyectos.yaml` | 442 bytes |
 
 
 
@@ -102,13 +102,13 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** docs: auto-documentacion horaria (Carlos, 2026-04-13T12:37:01+02:00)
+**Ultimo commit:** auto: cambios de sesión Claude Code (Carlos, 2026-04-13T14:26:38+02:00)
 
 ### Contribuidores
 
 | Autor | Commits |
 |-------|---------|
-| Carlos | 5 |
+| Carlos | 8 |
 
 
 ### Ramas
