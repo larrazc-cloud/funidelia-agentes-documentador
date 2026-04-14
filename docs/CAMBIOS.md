@@ -34866,3 +34866,365 @@ Genera documentacion a partir de la estructura explorada.
 ```
 
 ---
+## Ejecucion: 2026-04-14 16:09:15
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/README.md
+- Estado: sobrescrito
+```md
+# agente-documentador
+
+> Documentacion generada automaticamente por el Agente Documentador.
+
+## Estructura del proyecto
+
+- **Archivos:** 22
+- **Directorios:** 3
+
+- **Commits:** 100
+- **Rama activa:** `main`
+
+
+## Arbol de directorios
+
+```
+agente-documentador/
+├── core/
+├── docs/
+├── templates/
+
+```
+
+
+## Configuracion
+
+| Archivo | Tamano |
+|---------|--------|
+| `proyectos.yaml` | 442 bytes |
+
+
+
+
+## Modulos
+
+
+### instalar.py
+
+> Instalador del Agente Documentador.
+
+
+- **Funciones:** `main`
+
+
+### documentar.py
+
+> Agente Documentador - Punto de entrada principal.
+
+
+- **Funciones:** `main`
+
+
+### core/registro.py
+
+> Registro de proyectos para auto-documentacion.
+
+
+- **Funciones:** `listar`, `registrar`, `desregistrar`
+
+
+### core/__init__.py
+
+> Core del Agente Documentador.
+
+
+
+
+### core/git_manager.py
+
+> Git Manager - extrae informacion del historial git.
+
+- **Clases:** `GitManager`
+
+
+
+### core/changelog.py
+
+> Changelog - registra cada ejecucion y permite deshacer.
+
+- **Clases:** `Changelog`
+
+
+
+### core/explorador.py
+
+> Explorador de proyectos - analiza estructura de archivos y codigo fuente.
+
+- **Clases:** `Explorador`
+
+
+
+### core/orquestador.py
+
+> Orquestador - coordina la generacion de documentacion.
+
+- **Clases:** `Orquestador`
+
+
+
+
+
+
+## Git
+
+**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-04-14T16:01:30+02:00)
+
+### Contribuidores
+
+| Autor | Commits |
+|-------|---------|
+| Carlos | 100 |
+
+
+### Ramas
+
+- `main`
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/instalar.md
+- Estado: sobrescrito
+```md
+# instalar.py
+
+**Ruta:** `instalar.py`
+
+> Instalador del Agente Documentador.
+
+
+
+
+## Funciones
+
+
+### `main()`
+
+
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/documentar.md
+- Estado: sobrescrito
+```md
+# documentar.py
+
+**Ruta:** `documentar.py`
+
+> Agente Documentador - Punto de entrada principal.
+
+
+
+
+## Funciones
+
+
+### `main(ruta_proyecto, output, formato, incluir_git, force, deshacer, registrar, desregistrar, listar, verbose)`
+
+Genera documentacion automatica para el proyecto en RUTA_PROYECTO.
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/core_registro.md
+- Estado: sobrescrito
+```md
+# registro.py
+
+**Ruta:** `core/registro.py`
+
+> Registro de proyectos para auto-documentacion.
+
+
+
+
+## Funciones
+
+
+### `listar()`
+
+
+
+
+### `registrar(ruta, output, git)`
+
+Anade un proyecto al registro. Devuelve False si ya existia.
+
+
+### `desregistrar(ruta)`
+
+Elimina un proyecto del registro. Devuelve False si no estaba.
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/core_git_manager.md
+- Estado: sobrescrito
+```md
+# git_manager.py
+
+**Ruta:** `core/git_manager.py`
+
+> Git Manager - extrae informacion del historial git.
+
+
+## Clases
+
+
+### `GitManager`
+
+Gestiona la lectura de informacion git de un proyecto.
+
+
+**Metodos publicos:**
+
+- `es_repo_git()`
+- `obtener_resumen()`
+- `obtener_archivos_modificados_recientes()`
+
+
+
+
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/core_changelog.md
+- Estado: sobrescrito
+```md
+# changelog.py
+
+**Ruta:** `core/changelog.py`
+
+> Changelog - registra cada ejecucion y permite deshacer.
+
+
+## Clases
+
+
+### `Changelog`
+
+Gestiona el registro de cambios y la reversion.
+
+
+**Metodos publicos:**
+
+- `registrar_antes()`
+- `guardar()`
+- `deshacer()`
+
+
+
+
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/core_explorador.md
+- Estado: sobrescrito
+```md
+# explorador.py
+
+**Ruta:** `core/explorador.py`
+
+> Explorador de proyectos - analiza estructura de archivos y codigo fuente.
+
+
+## Clases
+
+
+### `Explorador`
+
+Explora un proyecto y extrae su estructura y metadatos.
+
+
+**Metodos publicos:**
+
+- `explorar()`
+
+
+
+
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+### Fichero: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-documentador/docs/core_orquestador.md
+- Estado: sobrescrito
+```md
+# orquestador.py
+
+**Ruta:** `core/orquestador.py`
+
+> Orquestador - coordina la generacion de documentacion.
+
+
+## Clases
+
+
+### `Orquestador`
+
+Genera documentacion a partir de la estructura explorada.
+
+
+**Metodos publicos:**
+
+- `planificar()`
+- `generar()`
+
+
+
+
+
+
+
+
+---
+*Generado con Agente Documentador v0.1.0*
+
+```
+
+---
