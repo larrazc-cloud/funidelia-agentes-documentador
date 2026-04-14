@@ -7,7 +7,7 @@
 - **Archivos:** 22
 - **Directorios:** 3
 
-- **Commits:** 27
+- **Commits:** 28
 - **Rama activa:** `main`
 
 
@@ -102,13 +102,13 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-04-14T11:43:12+02:00)
+**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-04-14T11:44:16+02:00)
 
 ### Contribuidores
 
 | Autor | Commits |
 |-------|---------|
-| Carlos | 27 |
+| Carlos | 28 |
 
 
 ### Ramas
