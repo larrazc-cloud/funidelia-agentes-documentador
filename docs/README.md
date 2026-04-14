@@ -4,10 +4,10 @@
 
 ## Estructura del proyecto
 
-- **Archivos:** 22
+- **Archivos:** 23
 - **Directorios:** 3
 
-- **Commits:** 126
+- **Commits:** 127
 - **Rama activa:** `main`
 
 
@@ -102,13 +102,13 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-04-14T16:52:03+02:00)
+**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-04-14T16:54:56+02:00)
 
 ### Contribuidores
 
 | Autor | Commits |
 |-------|---------|
-| Carlos | 126 |
+| Carlos | 127 |
 
 
 ### Ramas
