@@ -7,7 +7,7 @@
 - **Archivos:** 24
 - **Directorios:** 3
 
-- **Commits:** 382
+- **Commits:** 385
 - **Rama activa:** `main`
 
 
@@ -26,7 +26,7 @@ agente-documentador/
 
 | Archivo | Tamano |
 |---------|--------|
-| `proyectos.yaml` | 442 bytes |
+| `proyectos.yaml` | 548 bytes |
 
 
 
@@ -102,13 +102,13 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** auto: cambios de sesión Claude Code (Carlos, 2026-04-21T09:10:56+02:00)
+**Ultimo commit:** auto: cambios de sesión Claude Code (Carlos, 2026-04-21T09:14:54+02:00)
 
 ### Contribuidores
 
 | Autor | Commits |
 |-------|---------|
-| Carlos | 382 |
+| Carlos | 385 |
 
 
 ### Ramas
