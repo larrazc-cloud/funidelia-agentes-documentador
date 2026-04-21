@@ -8,3 +8,6 @@ proyectos:
 - ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/Agentes/agente-ux
   output: docs
   git: true
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/funidelia-product-hub
+  output: docs
+  git: true
