@@ -11,3 +11,6 @@ proyectos:
 - ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/funidelia-product-hub
   output: docs
   git: true
+- ruta: /Users/carlos/Desktop/Proyectos de Claude/Funidelia/proyecto-licencias
+  output: docs
+  git: true

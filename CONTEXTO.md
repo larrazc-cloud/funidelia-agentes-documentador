@@ -13,6 +13,7 @@ Definidos en `proyectos.yaml`:
 - Reviews amazon
 - agente-ux (PACO)
 - funidelia-product-hub
+- proyecto-licencias
 
 ## Características clave
 - Secciones `<!-- PROTEGIDO inicio -->...<!-- PROTEGIDO fin -->` nunca se sobrescriben

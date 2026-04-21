@@ -41,6 +41,7 @@ PAT mantiene un registro centralizado (`proyectos.yaml`) de los proyectos que vi
 | Reviews amazon | Funidelia/Reviews amazon |
 | agente-ux (PACO) | Funidelia/Agentes/agente-ux |
 | funidelia-product-hub | Funidelia/funidelia-product-hub |
+| proyecto-licencias | Funidelia/proyecto-licencias |
 
 ## Ejecucion automatica
 
