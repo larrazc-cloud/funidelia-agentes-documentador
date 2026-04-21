@@ -21,7 +21,7 @@ La documentacion tecnica de los proyectos se queda obsoleta porque nadie la actu
 - **Confirmacion antes de sobrescribir**: si hay ficheros existentes, pide confirmacion interactiva (saltable con `--force`)
 - **Secciones PROTEGIDO**: cualquier bloque marcado con `<!-- PROTEGIDO inicio -->` ... `<!-- PROTEGIDO fin -->` nunca se sobrescribe, ni siquiera con `--force`. Ideal para notas manuales del equipo
 - **Deshacer**: cada ejecucion queda registrada con el contenido previo. Se puede revertir con `--deshacer`
-- **Solo actua si hay cambios**: el cron comprueba si hay cambios en codigo fuente (excluyendo docs/) antes de ejecutar
+- **Solo actua si hay cambios**: el hook comprueba si hay cambios en codigo fuente (excluyendo docs/ y *.md) antes de ejecutar
 
 ## Registro de proyectos
 
@@ -39,12 +39,13 @@ PAT mantiene un registro centralizado (`proyectos.yaml`) de los proyectos que vi
 |----------|------|
 | agente-documentador | Funidelia/Agentes/agente-documentador |
 | Reviews amazon | Funidelia/Reviews amazon |
+| agente-ux (PACO) | Funidelia/Agentes/agente-ux |
+| funidelia-product-hub | Funidelia/funidelia-product-hub |
 
 ## Ejecucion automatica
 
-- **Cron del sistema**: cada hora (minuto :17)
-- **Proceso**: recorre todos los proyectos registrados, comprueba cambios en codigo fuente, documenta solo los que han cambiado, commitea y sube a GitHub
-- **Log**: `/tmp/autodoc.log`
+- **Hook Stop de Claude Code**: se dispara al terminar cada respuesta de Claude (configurado en `~/.claude/settings.json`, ejecuta `pat-hook.sh`)
+- **Proceso**: recorre todos los proyectos registrados, comprueba cambios en codigo fuente (excluyendo `docs/` y `*.md`), documenta solo los que han cambiado, commitea y sube a GitHub
 - **Coste**: cero. Todo corre en local, no usa APIs externas
 
 ## Stack tecnico
