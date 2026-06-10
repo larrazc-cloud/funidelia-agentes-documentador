@@ -102,7 +102,7 @@ agente-documentador/
 
 ## Git
 
-**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-06-10T17:23:14+02:00)
+**Ultimo commit:** docs: auto-documentacion PAT (Carlos, 2026-06-10T17:26:10+02:00)
 
 ### Contribuidores
 
